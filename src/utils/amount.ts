@@ -1,8 +1,8 @@
 /**
  * Converts a human-readable amount to the smallest unit (integer string).
  * @param amount - The human-readable amount (e.g., "1.5")
- * @param decimals - The number of decimals (e.g., 8 for APT)
- * @returns The smallest unit string (e.g., "150000000")
+ * @param decimals - The number of decimals (e.g., 6 for USDC, 8 for APT)
+ * @returns The smallest unit string (e.g., "1500000" for USDC)
  */
 export const toSmallest = (amount: string | number, decimals: number): string => {
     if (!amount) return '0';
@@ -14,8 +14,8 @@ export const toSmallest = (amount: string | number, decimals: number): string =>
 
 /**
  * Converts a smallest unit amount to a human-readable string.
- * @param amount - The smallest unit amount (e.g., "150000000")
- * @param decimals - The number of decimals (e.g., 8 for APT)
+ * @param amount - The smallest unit amount (e.g., "1500000")
+ * @param decimals - The number of decimals (e.g., 6 for USDC, 8 for APT)
  * @returns The human-readable string (e.g., "1.5")
  */
 export const fromSmallest = (amount: string | number, decimals: number): string => {

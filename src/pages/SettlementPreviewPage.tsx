@@ -37,7 +37,7 @@ export const SettlementPreviewPage: React.FC = () => {
                         transfers: transfers.map(t => ({
                             recipient: t.to,
                             amount: t.amount,
-                            token: 'APT'
+                            token: 'USDC'
                         })),
                         sender: account.address
                     };
@@ -85,7 +85,7 @@ export const SettlementPreviewPage: React.FC = () => {
                 <div className="flex items-center justify-between mb-6">
                     <div>
                         <p className="text-gray-400 text-sm">Total Settlement Volume</p>
-                        <p className="text-3xl font-bold text-white mt-1">{totalAmount.toFixed(2)} APT</p>
+                        <p className="text-3xl font-bold text-white mt-1">{totalAmount.toFixed(2)} USDC</p>
                     </div>
                     <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
                         <Wallet className="text-emerald-400 w-6 h-6" />
@@ -99,14 +99,14 @@ export const SettlementPreviewPage: React.FC = () => {
                     </div>
                     <div className="flex justify-between text-sm p-3 bg-white/5 rounded-lg border border-white/5">
                         <span className="text-gray-400">Gas Fees (Standard)</span>
-                        <span className="text-red-400 line-through decoration-red-400/50">~0.02 APT</span>
+                        <span className="text-red-400 line-through decoration-red-400/50">~0.02 USDC</span>
                     </div>
                     <div className="flex justify-between text-sm p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
                         <span className="text-emerald-400 flex items-center gap-2">
                             <ShieldCheck className="w-4 h-4" /> SmoothSend Fee
                         </span>
                         <span className="text-emerald-400 font-mono">
-                            {quote ? (parseInt(quote.relayerFee) / 1e8).toFixed(6) : '...'} APT
+                            {quote ? (parseInt(quote.relayerFee) / 1e6).toFixed(6) : '...'} USDC
                         </span>
                     </div>
                 </div>
